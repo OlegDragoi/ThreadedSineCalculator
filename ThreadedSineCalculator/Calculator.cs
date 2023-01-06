@@ -39,6 +39,11 @@ namespace ThreadedSineCalculator
             return cos;
         }
 
+        public static decimal Sin(decimal x)
+        {
+            return Cos(PI / 2 - x);
+        }
 
+        public static decimal PI { get { return 3.1415926535897932384626433832m; } }
     }
 }

@@ -1,0 +1,20 @@
+version: "1.0"
+services:
+  mysql:
+    container_name: sine_database
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: bind
+        source: mysql
+        target: /var/lib/mysql
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: sine_database
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ROOT_HOST: "0.0.0.0/0"
+volumes:
+  src:
+  mysql:
